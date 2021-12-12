@@ -64,8 +64,8 @@
 
 
 //Global variable to count number of sections
-let count = 3;
-
+let count = 0;
+const numberOfStartSections = 4;
 
 //this event listener adds a new section and a corresponding button to it in the navbar
 function addSectionAndButton() {
@@ -81,7 +81,7 @@ function addSectionAndButton() {
 
     //This part of the function add a button to the navbar corresponds to the section added
     let newBtn = document.createElement('li');
-    newBtn.innerHTML = '<button><a href="#section' + count + '">section ' + count + '</a></button>';
+    newBtn.innerHTML = '<button class="menu__link"><a href="#section' + count + '">section ' + count + '</a></button>';
 
     // <button><a href="#section1">sections</a></button>
 
@@ -91,12 +91,13 @@ function addSectionAndButton() {
 
 //This function adds 3 buttons to the navbar that corresponds to the 3 sections that exist on the page after load is complete
 window.addEventListener('load', (event) => {
-    console.log("load completed");
-    for (let i = 1; i <= count; i++) {
-        let newBtn = document.createElement('li');
-        newBtn.innerHTML = '<button><a href="#section' + i + '">section ' + i + '</a></button>';
-        let navBar = document.querySelector('#navbar__list');
-        navBar.appendChild(newBtn);
+    for (let i = 1; i <= numberOfStartSections; i++) {
+        // let newBtn = document.createElement('li');
+        // newBtn.innerHTML = '<button><a href="#section' + i + '">section ' + i + '</a></button>';
+        // let navBar = document.querySelector('#navbar__list');
+        // navBar.appendChild(newBtn);
+        // count++;
+        addSectionAndButton();
     }
 });
 

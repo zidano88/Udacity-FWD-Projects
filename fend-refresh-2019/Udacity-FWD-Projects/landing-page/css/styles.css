@@ -72,6 +72,7 @@ section {
 
 .navbar__menu li {
     display: inline-block;
+    margin: 0.1rem;
 }
 
 .navbar__menu .menu__link {
@@ -82,11 +83,26 @@ section {
     color: #000;
 }
 
+.navbar__menu .menu__link a{
+    text-decoration: none;
+    color:black;
+}
+
+button {
+    border-radius: 0.5rem;
+    
+}
+
 .navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
 }
+
+.navbar__menu .menu__link a:hover{
+    color:white;
+}
+
 
 /* Header Styles */
 .page__header {
