@@ -109,3 +109,31 @@ document.addEventListener("keypress", function (event) {
     }
 });
 
+
+//This is an event listener to get the position of a section relative to he viewport
+window.addEventListener('scroll', (event) => {
+    let sectionCoordinates = document.querySelectorAll('section');
+    // console.log(sectionCoordinates);
+    sectionCoordinates.forEach((sec) => {
+
+        let sectionId = sec.id.slice(7);
+        let navbarList = document.querySelector('#navbar__list').getElementsByTagName('li');
+        let activeSectionLi = navbarList[sectionId - 1];
+        let activeSectionButton = activeSectionLi.querySelector('button');
+
+        if (sec.getBoundingClientRect().top <= 150 && sec.getBoundingClientRect().bottom >= 150) {
+            // console.log(sec);
+            sec.classList.add("your-active-class");
+
+            activeSectionButton.classList.add("activeBtn");
+        }
+        else {
+            sec.classList.remove("your-active-class");
+            activeSectionButton.classList.remove("activeBtn");
+        }
+        // console.log(sec.getBoundingClientRect().top);
+    });
+    //console.log(sectionCoordinates.top);
+    // 85 : 100 => top
+
+})
