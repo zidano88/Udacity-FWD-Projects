@@ -1,8 +1,8 @@
 To be:
 
--Styling for Active Status for section in view
--Set Active Status for section in viewport
--Active Section should be Highlighted in the navbar
+*Styling for Active Status for section in view
+*Set Active Status for section in viewport
+*Active Section should be Highlighted in the navbar
 _______________________________________________
 
 *At least 4 Sections should be added to the page at start dynamically
