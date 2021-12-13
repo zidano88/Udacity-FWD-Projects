@@ -81,12 +81,18 @@ function addSectionAndButton() {
 
     //This part of the function add a button to the navbar corresponds to the section added
     let newBtn = document.createElement('li');
-    newBtn.innerHTML = '<button class="menu__link"><a href="#section' + count + '">section ' + count + '</a></button>';
+    newBtn.innerHTML = '<button class="menu__link" onclick="scrollToSection(this)">section ' + count + '</button>';
 
     // <button><a href="#section1">sections</a></button>
 
     let navBar = document.querySelector('#navbar__list');
     navBar.appendChild(newBtn);
+}
+
+//This function scrolls to section when clicking on a button in the navbar
+function scrollToSection(button) {
+    let sectionId = button.innerHTML.split(" ").join("");
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 }
 
 //This function adds 3 buttons to the navbar that corresponds to the 3 sections that exist on the page after load is complete
@@ -136,4 +142,21 @@ window.addEventListener('scroll', (event) => {
     //console.log(sectionCoordinates.top);
     // 85 : 100 => top
 
-})
+});
+
+
+let timeout;
+
+//this function is used to  display navbar and hide it after 4 seconds of user did not scroll or move the mouse for the 4 seconds
+const displayNavBar = function (event) {
+    document.getElementById('navbar__list').style.display = 'block';
+
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+        document.getElementById('navbar__list').style.display = 'none';
+    }, 3000);
+
+};
+
+window.addEventListener('mousemove', displayNavBar);
+window.addEventListener('scroll', displayNavBar);

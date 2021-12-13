@@ -13,14 +13,16 @@ _______________________________________________
 *Start with empty ul and dynamically build navigation using Append, appendChild, and innerHTML.
 _______________________________________________
 
--Clicking on a button in navbar, it should scroll SMOOTHLY to the appropriate section. 
+*Clicking on a button in navbar, it should scroll SMOOTHLY to the appropriate section. 
+*Modify Buttons structure and Text.
 _______________________________________________
 
 -The README file should be modified and updated with information about the project and use correct MARKDOWN SYNTAX.
 
 -Use Comments before each procedure of class.
+
+-make js clean and commented and well structured
 _______________________________________________
 
-(tomorrow: Active Status for section inview port
-	   Active Status for button corresponding to section in viewport
-	   Smooth scrolling  
+(tomorrow: Modify Readme file
+	   clean the code and structure it
