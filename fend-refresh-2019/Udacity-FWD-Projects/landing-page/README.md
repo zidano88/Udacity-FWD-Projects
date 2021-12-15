@@ -1,13 +1,27 @@
-# Landing Page Project
+# Landing Page Project for Udacity Web-Dev Course  
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Description](#Description)  
+* [Usage](#Usage)  
+* [Styling](#Styling)  
+* [Dependencies](#Dependencies)  
 
-## Instructions
+## Description  
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+This is a **landing page** template project that was build for a Udacity course. The web page has the ability to add sections dynamically and does not have static content. Furthermore. Users can navigate through different sections by clicking on the button that corresponds to each section in the Navbar.   
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Usage  
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+1. To Open the project, open the index.html file in any browser   
+2. To add a new section, press ENTER button on keyboard  
+3. To navigate to a specific section, click on its corresponding button in the Navbar  
+4. To display the Navbar, move the mouse or scroll 
+
+## Styling  
+
+The section in the viewport is highlighted with a different black background and its corresponding button in the Navbar has a red background   
+
+## Dependencies  
+
+This project is built using HTML, CSS and JavaScript  
