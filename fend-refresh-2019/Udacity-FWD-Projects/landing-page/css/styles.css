@@ -88,9 +88,9 @@ section {
     color:black;
 }
 
+/* This part makes the buttons have round borders */
 button {
     border-radius: 0.5rem;
-    
 }
 
 .navbar__menu .menu__link:hover {
@@ -224,6 +224,7 @@ section.your-active-class .landing__container::after {
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
 
+/* This class gives the button a red background and it is used to highlight the button for section in viewport */
 .activeBtn {
     background-color: red;
 } 

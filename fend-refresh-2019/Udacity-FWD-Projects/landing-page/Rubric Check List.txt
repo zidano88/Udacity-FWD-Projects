@@ -17,12 +17,9 @@ _______________________________________________
 *Modify Buttons structure and Text.
 _______________________________________________
 
--The README file should be modified and updated with information about the project and use correct MARKDOWN SYNTAX.
+*The README file should be modified and updated with information about the project and use correct MARKDOWN SYNTAX.
 
 -Use Comments before each procedure of class.
 
 -make js clean and commented and well structured
 _______________________________________________
-
-(tomorrow: Modify Readme file
-	   clean the code and structure it
