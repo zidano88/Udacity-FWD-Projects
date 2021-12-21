@@ -32,16 +32,9 @@ function addSectionAndButton() {
     main.appendChild(newSection);
     //This part of the function add a button to the navbar corresponds to the section added
     let newBtn = document.createElement('li');
-    newBtn.innerHTML = '<button class="menu__link" onclick="scrollToSection(this)">section ' + count + '</button>';
+    newBtn.innerHTML = '<button class="menu__link">section ' + count + '</button>';
     let navBar = document.querySelector('#navbar__list');
     navBar.appendChild(newBtn);
-}
-
-
-//This function scrolls to section when clicking on a button in the navbar
-function scrollToSection(button) {
-    let sectionId = button.innerHTML.split(" ").join("");
-    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 }
 
 
@@ -69,6 +62,20 @@ document.addEventListener("keypress", function (event) {
     if (event.key === 'Enter') {
         addSectionAndButton();
     }
+});
+
+//This Event Listener listens is user clicks anywhere on the website and checks if this click was made on any of NavBar buttons and if so, it prevents the default action and applies scrollIntoView function to the corresponding section of the clicked button 
+document.addEventListener('click', (event) => {
+    //This part retrieves all the buttons on the NavBar and checks if any of them was clicked
+    let allNavbarButtons = document.querySelectorAll('.menu__link');
+    allNavbarButtons.forEach((btn) => {
+        if (btn == event.target) {
+            //this part applies to the clicked button and it prevents the default action of the click and then applies scrollIntoView function to the corresponding section of the clicked button
+            event.preventDefault();
+            let sectionId = btn.innerHTML.split(" ").join("");
+            document.getElementById(sectionId).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        }
+    });
 });
 
 //This is an event listener to get the position of a section relative to the viewport and then decides which section should be highlighted and then adds "your-active-class" to the chosen section 
