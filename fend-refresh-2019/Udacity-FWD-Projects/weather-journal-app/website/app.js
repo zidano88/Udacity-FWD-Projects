@@ -103,12 +103,7 @@ function performAction(e) {
                     document.getElementById('date').innerHTML = "Date : " + lastDate;
                     document.getElementById('temp').innerHTML = "Temperature : " + lastTemperature;
                     document.getElementById('content').innerHTML = "Feeling : " + lastResponse;
-                    // console.log(latestData)
-                    // console.log(latestData.date)
-                    // console.log(latestData.temperature)
-                    // console.log(latestData.userResponse)
-                    // document.getElementById('date').innerHTML = 'adsfqedoooooooooooaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaao';
-                    // console.log("first object" + data.pop(1))
+
                 })
 
         })
