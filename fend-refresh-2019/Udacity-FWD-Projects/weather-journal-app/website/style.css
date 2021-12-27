@@ -16,12 +16,18 @@ body{
     font-family: 'Oswald', sans-serif;
 }
 
+.contentContainer {
+    display: flex;
+    margin: 0 20rem;
+}
+
 .holder{
 
 }
 
 .entry{
     background: rgba(59, 74, 107, .4);
+    position: absolute;
 }
 
 #entryHolder{
