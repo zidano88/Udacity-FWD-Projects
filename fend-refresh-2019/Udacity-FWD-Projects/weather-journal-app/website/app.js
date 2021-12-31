@@ -81,12 +81,33 @@ function performAction(e) {
             //The following 2 variables retrieves date and temperature from the response received from weather API and they use DOT notation to access those values from the body of the response object from the API 
             let retrievedDate = data.list[0].dt_txt;
             let retrievedTemperature = data.list[0].main.temp;
+            let retrievedWeather = data.list[0].weather[0].description;
+            let icon = data.list[0].weather[0].icon;
+            let retrievedLocation = data.city.name;
+            console.log(retrievedLocation);
+            // console.log(retrievedWeather);
+            // console.log(icon);
             //This part calls the postWeatherDataToServer function to POST data to the server
             postWeatherDataToServer('/addToProjectData', {
+                location: retrievedLocation,
                 temperature: retrievedTemperature,
                 date: retrievedDate,
-                userResponse: userEnteredResponse
+                userResponse: userEnteredResponse,
+                weather: retrievedWeather
             })
+            //http://openweathermap.org/img/wn/10d@2x.png
+            document.getElementById('weatherImage').src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            // switch (retrievedWeather) {
+            //     case "clear sky":
+            //         weatherImage.src = "";
+            //         break;
+            //     case y:
+            //         // code block
+            //         break;
+            //     default:
+            //     // code block
+            // }
+
         })
 
 
@@ -97,12 +118,18 @@ function performAction(e) {
                     // document.getElementById('toDisplayTest').innerHTML = "<img src=" + data + ">";
 
                     let latestData = data[(data.length - 1)];
+                    let lastLocation = latestData.location
                     let lastDate = latestData.date;
                     let lastTemperature = latestData.temperature;
                     let lastResponse = latestData.userResponse;
-                    document.getElementById('date').innerHTML = "Date : " + lastDate;
-                    document.getElementById('temp').innerHTML = "Temperature : " + lastTemperature;
+                    let lastWeather = latestData.weather;
+                    document.getElementById('location').innerHTML = "Location : " + lastLocation;
+                    document.getElementById('date').innerHTML = "Date : " + lastDate.slice(0, 10);
+                    //.slice(0, 10)
+                    document.getElementById('temp').innerHTML = "Temperature : " + Math.round(lastTemperature) + ' degrees';
+                    //Math.round(allData.temp)+ 'degrees'
                     document.getElementById('content').innerHTML = "Feeling : " + lastResponse;
+                    document.getElementById('weather').innerHTML = "Weather : " + lastWeather;
 
                 })
 

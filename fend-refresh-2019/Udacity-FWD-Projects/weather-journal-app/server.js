@@ -43,9 +43,11 @@ app.post("/addToProjectData", (req, res) => {
     // projectData.push(req.body);
     //Data Parts
     let newEntry = {
+        location: req.body.location,
         temperature: req.body.temperature,
         date: req.body.date,
-        userResponse: req.body.userResponse
+        userResponse: req.body.userResponse,
+        weather: req.body.weather
     };
     projectData.push(newEntry);
     console.log(projectData);
