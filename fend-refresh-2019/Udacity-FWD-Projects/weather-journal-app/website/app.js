@@ -42,7 +42,7 @@ const postWeatherDataToServer = async (url = '', data = {}) => {
         const newData = await response.json();
         // console.log(newData);
         return newData
-        con
+
     } catch (error) {
         console.log("error", error);
         // appropriately handle the error
@@ -60,7 +60,7 @@ const getWeatherDatafromServer = async (url = '', data = {}) => {
         // console.log('this is received data')
         // console.log(newData);
         return newData
-        con
+
     } catch (error) {
         console.log("error", error);
         // appropriately handle the error
