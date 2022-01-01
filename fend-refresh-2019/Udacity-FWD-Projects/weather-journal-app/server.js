@@ -37,10 +37,8 @@ app.get("/getProjectData", (req, res) => {
 
 //POST method
 app.post("/addToProjectData", (req, res) => {
-    //To be modified
     console.log(req.body);
     console.log('Post received');
-    // projectData.push(req.body);
     //Data Parts
     let newEntry = {
         location: req.body.location,
