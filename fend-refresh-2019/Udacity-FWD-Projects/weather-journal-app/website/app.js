@@ -1,5 +1,5 @@
 /* Global Variables */
-const apiKey = "&appid=8e0cdec5c29046e2430cfa30678d7707";
+const apiKey = "&appid=8e0cdec5c29046e2430cfa30678d7707&units=imperial";
 const baseURL = "http://api.openweathermap.org/data/2.5/forecast?id=";
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -9,10 +9,6 @@ let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
 /*http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}*/
 
 //london id = 2643743
-
-//524901 is the zip code
-
-/*api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=8e0cdec5c29046e2430cfa30678d7707*/
 
 //getWeatherData is a GET request that uses async function and fetch to retrieve data from weather API
 const getWeatherData = async (URL, zip, key) => {
@@ -30,63 +26,54 @@ const getWeatherData = async (URL, zip, key) => {
 //postWeatherDataToServer is a POST function that posts data to the server
 const postWeatherDataToServer = async (url = '', data = {}) => {
     const response = await fetch(url, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        credentials: 'same-origin', // include, *same-origin, omit
+        method: 'POST',
+        credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data), // body data type must match "Content-Type" header        
+        body: JSON.stringify(data),
     });
 
     try {
         const newData = await response.json();
-        // console.log(newData);
         return newData
 
     } catch (error) {
         console.log("error", error);
-        // appropriately handle the error
     }
 }
 
 //getWeatherDatafromServer is a GET function that receives data from the server
 const getWeatherDatafromServer = async (url = '', data = {}) => {
     const response = await fetch(url, {
-        method: 'GET', // *GET, POST, PUT, DELETE, etc.       
+        method: 'GET',
     });
 
     try {
         const newData = await response.json();
-        // console.log('this is received data')
-        // console.log(newData);
         return newData
 
     } catch (error) {
         console.log("error", error);
-        // appropriately handle the error
     }
 }
 
 //performAction function that calls getWeatherData functions with user parameters to retrieve data from the API and then calls postWeatherDataToServer to post this received data to the server
 function performAction(e) {
     let newZip = document.getElementById('zip').value;
-    const testZip = '4350049'
-    //Chage testZip to newZip to add user entered zip
     getWeatherData(baseURL, newZip, apiKey)
 
         //This part call the postWeatherDataToServer function to post retireved data from the api to the server and this data includes date and temperature and user entered feeling
         .then(function (data) {
             //Retrieve user entered feeling
             let userEnteredResponse = document.getElementById('feelings').value;
-            //The following 2 variables retrieves date and temperature from the response received from weather API and they use DOT notation to access those values from the body of the response object from the API 
+            //The following variables retrieves date and temperature from the response received from weather API and they use DOT notation to access those values from the body of the response object from the API 
             let retrievedDate = data.list[0].dt_txt;
             let retrievedTemperature = data.list[0].main.temp;
             let retrievedWeather = data.list[0].weather[0].description;
             let icon = data.list[0].weather[0].icon;
             let retrievedLocation = data.city.name;
             console.log(retrievedLocation);
-            // console.log(retrievedWeather);
-            // console.log(icon);
             //This part calls the postWeatherDataToServer function to POST data to the server
             postWeatherDataToServer('/addToProjectData', {
                 location: retrievedLocation,
@@ -95,22 +82,11 @@ function performAction(e) {
                 userResponse: userEnteredResponse,
                 weather: retrievedWeather
             })
-            //http://openweathermap.org/img/wn/10d@2x.png
+            //This part save the retrieved icon that correspond to weather state from the API and saves its URL in img element source to display it in the UI
             document.getElementById('weatherImage').src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-            // switch (retrievedWeather) {
-            //     case "clear sky":
-            //         weatherImage.src = "";
-            //         break;
-            //     case y:
-            //         // code block
-            //         break;
-            //     default:
-            //     // code block
-            // }
-
         })
 
-
+        //This part calls the getWeatherDatafromServer function to GEt the stored data from the server and selects the latest data object from the retrieved data from the server and updates HTML file elements to display the retireved data 
         .then(function (data) {
             getWeatherDatafromServer('getProjectData')
                 .then(function (data) {

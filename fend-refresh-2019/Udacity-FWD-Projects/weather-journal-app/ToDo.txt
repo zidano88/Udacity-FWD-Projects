@@ -1,3 +1,9 @@
 clean js code
 check rubric
 update readme file
+
+______________________________________________________
+To be modified:
+_______________
+-projectData = {}
+-post not compatible with {}

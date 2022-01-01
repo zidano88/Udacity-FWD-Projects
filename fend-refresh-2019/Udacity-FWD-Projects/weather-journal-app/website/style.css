@@ -1,23 +1,14 @@
-/* font-family: 'Poppins', sans-serif; weights 200 - 400 - 600*/
+/* The styling for the website has been changed completely*/
 :root {
-  --red: hsl(0, 78%, 62%);
   --relaxing-cyan: hsl(180, 62%, 55%);
-  --orange: hsl(34, 97%, 64%);
-  --light-blue: hsl(212, 86%, 64%);
-
   --dark-blue: hsl(234, 12%, 34%);
   --gray-blue: hsl(229, 6%, 66%);
-  --light-grey: hsl(0, 0%, 98%);
   --background-color: #FAFAFA;
 }
 
 body{
-    /* background: #ffffff; */
     background-color: var(--background-color);
     font-family: 'Poppins', sans-serif;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 .headline {
@@ -36,7 +27,6 @@ body{
 
 .userEnteredDataContainer {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -51,7 +41,6 @@ label {
 
 .holder {
     width: 20rem;
-    /* flex-direction: column; */
 }
 
 textarea, input{
@@ -64,12 +53,7 @@ textarea, input{
 }
 
 #generate {
-    /* width: 400px; */
-    /* height: 100px; */
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* align-self: center; */
     margin: 1.5rem auto;
     background: var(--dark-blue);
     color: white;    
@@ -84,10 +68,8 @@ textarea, input{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* align-self: center; */
     flex-direction: column;
     margin: 1rem auto;
-    /* width: 50rem; */
     background-color: var(--gray-blue);
     border-radius: 1rem;
     padding: 1rem 1rem 1.5rem;
@@ -112,124 +94,22 @@ textarea, input{
 }
 
 #entryHolder {
-    /* margin-right: 10rem; */
     margin: 1rem 4rem;
-    /* width: 10rem; */
-
 }
 
 #weatherImage {
     width: 10rem;
-    /* margin-left: 3rem; */
 }
 
-/* .entry{
-    background: rgba(59, 74, 107, .4);
-    position: absolute;
-} */
-
-/* .holder{
-    margin: 1rem;
-} */
-
-/*
-#entryHolder{
-
-}
-
-#date{
-
-}
-
-#temp{
-
-}
-
-#content{
-
-}
-
-
-.title{
-
-}
-*/
-/*  Basic Styling To Override Default For Basic HTML Elements */
-label{
-    /* display:block; */
-    /* font-size: 18px; */
-}
-
-/* .feel {
-    padding-top: 6px;
-    width: 35rem;
-} */
-/* 
-.zip {
-    width: 20rem;
-} */
-
-#zip{
-    /* display:block; */
-    /* height: 4rem;
-    font-size: 20px; */
-    /* width: 320px; */
-    /* background:#22b2da; */
-    /* color: #f0d43a; */
-    /* font-size: 20px; */
-    /* font-family: 'Oswald', sans-serif; */
-    /* border: none; */
-}
-
-/* #feelings {
-    font-size: 20px;
-    height: 4rem;
-    width: 30rem;
-} */
-
-/* button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-    box-shadow: 2px 4px 5px #444;
-} */
-/* h1{
-    font-size: 36px;
-} */
-
-
-textarea{
-    /* background:#22b2da; */
-    /* color: #f0d43a; */
-    
-    /* font-family: 'Oswald', sans-serif; */
-}
 /* Reset style for HTML element on active to have no border*/
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    /* outline: none; */
+    outline: none;
 }
-/* Style for Placeholder Text*/
-::placeholder { /* Firefox, Chrome, Opera */ 
-    /* color: #f0d43a;  */
-    /* font-family: 'Oswald', sans-serif; */
 
-} 
-  
-:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    /* color: #f0d43a;  */
-    /* font-family: 'Oswald', sans-serif; */
-
-} 
-  
-::-ms-input-placeholder { /* Microsoft Edge */ 
-    /* color: #f0d43a;  */
-    /* font-family: 'Oswald', sans-serif; */
-
-} 
+#generate:hover {
+    background-color: var(--gray-blue);
+    color: black;
+}
