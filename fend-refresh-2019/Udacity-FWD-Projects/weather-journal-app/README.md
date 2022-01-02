@@ -12,9 +12,7 @@ This is a **Weather Journal Website** that uses openweathermap.org free api and 
 
 ## Usage  
 
-1. To Open the project, start server in terminal using **node server.js** command and make sure you are in the project directory and then open the browser and go to **localhost:3000** in the URL   
-2. Search for your city on openweathermap.org website and retrieve the ZIP code of your chosen city from the URL     
-3. Enter the retrieve ZIP code in the specified field in the webpage and enter how you feel in the textarea specified and then press the **generate** button and it will display weather data of your chosen city  
+1. To Open the project, start server in terminal using **node server.js** command and make sure you are in the project directory and then open the browser and go to **localhost:3000** in the URL     2. Enter the ZIP code of your chosen city in the specified field in the webpage and enter how you feel in the textarea specified and then press the **generate** button and it will display weather data of your chosen city  
 
 ## Dependencies  
 

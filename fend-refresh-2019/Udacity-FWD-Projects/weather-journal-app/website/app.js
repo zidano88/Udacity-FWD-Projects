@@ -1,7 +1,8 @@
 /* Global Variables */
 //get the apiKey from  Token.zip
 const apiKey = "";
-const baseURL = "http://api.openweathermap.org/data/2.5/forecast?id=";
+const baseURL = "http://api.openweathermap.org/data/2.5/forecast?zip=";
+
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
@@ -94,7 +95,7 @@ function performAction(e) {
 
                     // document.getElementById('toDisplayTest').innerHTML = "<img src=" + data + ">";
 
-                    let latestData = data[(data.length - 1)];
+                    let latestData = data;
                     let lastLocation = latestData.location
                     let lastDate = latestData.date;
                     let lastTemperature = latestData.temperature;

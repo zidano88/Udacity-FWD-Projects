@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = [];
+projectData = {};
 const port = 3000;
 
 // Require Express to run server and routes
@@ -47,6 +47,6 @@ app.post("/addToProjectData", (req, res) => {
         userResponse: req.body.userResponse,
         weather: req.body.weather
     };
-    projectData.push(newEntry);
+    projectData = newEntry;
     console.log(projectData);
 });
