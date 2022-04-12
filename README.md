@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Description](#description)
-* [List of Projects](#list_of_projects)
+* [List of Projects](#list-of-projects)
 
 ## Description   
 
